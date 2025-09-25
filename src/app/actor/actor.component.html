@@ -1,6 +1,13 @@
-<p>actor works!</p>
+<p>Színészek kezelése</p>
 
-<table>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary mb-2" 
+data-bs-toggle="modal" data-bs-target="#addModal">
+Hozzáad
+</button>
+
+<table class="table table-striped table-warning">
     <thead>
         <tr>
         <th>Id</th>
@@ -20,3 +27,46 @@
         }
     </tbody>
 </table>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" 
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Hozzáadás</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+
+        <form [formGroup]="actorForm" (ngSubmit)="addActor()" id="actorForm">
+            <!-- ide jön az ürlap -->
+             <div>
+                <label for="name" class="form-label">Név</label>
+                <input type="text" id="" class="form-control" formControlName="name">
+             </div>
+
+             <div>
+                <label for="city" class="form-label">Település</label>
+                <input type="text" id="city" class="form-control" formControlName="city">
+             </div>
+
+              <div>
+                <label for="birthDate" class="form-label">Születésnap</label>
+                <input type="text" id="brthDate" class="form-control" formControlName="birthDate" placeholder="év-hó-nap">
+             </div>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezár</button>
+        <button type="submit" class="btn btn-primary"
+        form="actorForm" >Ment</button>
+      </div>
+    </div>
+  </div>
+</div>
