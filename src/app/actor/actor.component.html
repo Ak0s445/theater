@@ -1,1 +1,22 @@
 <p>actor works!</p>
+
+<table>
+    <thead>
+        <tr>
+        <th>Id</th>
+        <th>Név</th>
+        <th>Település</th>
+        <th>Születés</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(actor of actors; track actor.id) { 
+            <tr>
+                <td>{{actor.id}}</td>
+                <td>{{actor.name}}</td>
+                <td>{{actor.city}}</td>
+                <td>{{actor.birthDate}}</td>  <!-- Ezeket az adatokat a backend szerint csináljuk ugye, az ottani mezőnevek szerint -->
+            </tr>
+        }
+    </tbody>
+</table>

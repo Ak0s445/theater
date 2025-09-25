@@ -11,9 +11,10 @@ export class ApiService {
     getActors(){
       const url = this.host + 'actors'
       this.http.get(url)
+      return this.http.get(url)
     }
   addActor(actor:any){
     const url = this.host + 'actors'
-    this.http.post(url, actor)
+    return this.http.post(url, actor)
   }
 }
